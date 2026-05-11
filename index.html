@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlueWave Markets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top">
+          <span class="brand-mark">B</span>
+          <span>
+            <strong>BlueWave</strong>
+            <small>Markets Intelligence</small>
+          </span>
+        </a>
+        <nav class="top-nav">
+          <a href="#features">Features</a>
+          <a href="#dashboard">Dashboard</a>
+          <button class="ghost-button" id="loginToggle" type="button">Log in</button>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow">Market research platform</span>
+            <h1>See market leadership, sector rotation, and high-conviction stocks in one place.</h1>
+            <p>
+              A modern white-and-blue dashboard for screening S&amp;P 500 leaders, tracking
+              moving averages, spotting market momentum, and saving your watchlist.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-button" href="#dashboard">Open Dashboard</a>
+              <a class="secondary-button" href="#features">Explore Features</a>
+            </div>
+            <div class="hero-metrics">
+              <article>
+                <strong>100+</strong>
+                <span>S&amp;P 500 stocks</span>
+              </article>
+              <article>
+                <strong>5</strong>
+                <span>Return horizons</span>
+              </article>
+              <article>
+                <strong>4</strong>
+                <span>Moving averages</span>
+              </article>
+            </div>
+          </div>
+
+          <div class="hero-preview card">
+            <div class="preview-glow"></div>
+            <div class="preview-head">
+              <span>Today&apos;s pulse</span>
+              <span class="status-pill positive">Risk-on</span>
+            </div>
+            <div class="preview-grid">
+              <article>
+                <small>S&amp;P 500</small>
+                <strong>5,214.8</strong>
+                <span class="positive">+1.24%</span>
+              </article>
+              <article>
+                <small>Nasdaq 100</small>
+                <strong>18,336.5</strong>
+                <span class="positive">+1.81%</span>
+              </article>
+              <article>
+                <small>Russell 2000</small>
+                <strong>2,072.6</strong>
+                <span class="negative">-0.28%</span>
+              </article>
+            </div>
+            <div class="preview-bar">
+              <span>AI leadership expanding across semis and software</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="feature-strip" id="features">
+          <article class="feature-card card">
+            <h2>Market overview</h2>
+            <p>Track main index trends with 10MA, 20MA, 50MA, and 200MA status at a glance.</p>
+          </article>
+          <article class="feature-card card">
+            <h2>Deep screener</h2>
+            <p>Filter by sector, market cap, performance, and keywords across 100+ stocks.</p>
+          </article>
+          <article class="feature-card card">
+            <h2>Actionable signals</h2>
+            <p>Combine trend, sentiment, volatility, momentum, and sector leadership in one workflow.</p>
+          </article>
+        </section>
+
+        <section class="dashboard-section" id="dashboard">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Dashboard</span>
+              <h2>Market command center</h2>
+            </div>
+            <p>
+              Designed for fast scanning across indices, sectors, and individual stocks with a
+              clean white-and-blue experience.
+            </p>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="card overview-card">
+              <div class="card-title-row">
+                <div>
+                  <span class="card-kicker">Market Overview</span>
+                  <h3>Major index trends</h3>
+                </div>
+                <span class="status-pill positive">Updated daily</span>
+              </div>
+              <p class="api-note" id="marketOverviewNote">
+                Loading live market overview from secure backend proxy...
+              </p>
+              <div class="overview-list" id="marketOverview"></div>
+            </section>
+
+            <section class="card indicator-card">
+              <div class="card-title-row">
+                <div>
+                  <span class="card-kicker">Trend Indicators</span>
+                  <h3>Multi-timeframe signal</h3>
+                </div>
+              </div>
+              <div class="indicator-group" id="trendIndicators"></div>
+              <div class="indicator-divider"></div>
+              <div class="card-title-row compact">
+                <div>
+                  <span class="card-kicker">Risk Indicators</span>
+                  <h3>Volatility and sentiment</h3>
+                </div>
+              </div>
+              <div class="risk-grid" id="riskIndicators"></div>
+            </section>
+
+            <section class="card sectors-card">
+              <div class="card-title-row">
+                <div>
+                  <span class="card-kicker">Leading Sectors</span>
+                  <h3>Themes with momentum</h3>
+                </div>
+              </div>
+              <div class="sector-pills" id="leadingSectors"></div>
+            </section>
+
+            <section class="card heatmap-card">
+              <div class="card-title-row">
+                <div>
+                  <span class="card-kicker">Market Heatmap</span>
+                  <h3>Return snapshot</h3>
+                </div>
+                <div class="heatmap-periods" id="heatmapPeriods"></div>
+              </div>
+              <div class="heatmap-grid" id="heatmapGrid"></div>
+            </section>
+          </div>
+
+          <section class="card screener-card">
+            <div class="card-title-row screener-header">
+              <div>
+                <span class="card-kicker">Stock Screener</span>
+                <h3>S&amp;P 500 leaders and watchlist candidates</h3>
+              </div>
+              <div class="watchlist-summary" id="watchlistSummary"></div>
+            </div>
+
+            <div class="filter-bar">
+              <label class="search-input">
+                <span>Search</span>
+                <input id="searchInput" type="search" placeholder="Ticker or company keyword" />
+              </label>
+
+              <label>
+                <span>Sector</span>
+                <select id="sectorFilter"></select>
+              </label>
+
+              <label>
+                <span>Performance</span>
+                <select id="performanceFilter">
+                  <option value="all">All performance</option>
+                  <option value="leaders">YTD above 20%</option>
+                  <option value="positive">YTD positive</option>
+                  <option value="laggards">YTD below 0%</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Market Cap</span>
+                <select id="marketCapFilter">
+                  <option value="all">All sizes</option>
+                  <option value="mega">Mega cap $200B+</option>
+                  <option value="large">Large cap $50B+</option>
+                  <option value="mid">Mid cap below $50B</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ticker</th>
+                    <th>Company</th>
+                    <th>Price</th>
+                    <th>Market Cap</th>
+                    <th>P/E</th>
+                    <th>EPS</th>
+                    <th>YTD %</th>
+                    <th>52W Range</th>
+                    <th>Div Yield</th>
+                    <th>Sector</th>
+                    <th>Trend</th>
+                    <th>Watch</th>
+                  </tr>
+                </thead>
+                <tbody id="stockTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
